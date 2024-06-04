@@ -15,6 +15,7 @@ mkdir datasets
 cd datasets
 ```
 
+Please download the dataset through [Google Drive](https://drive.google.com/drive/folders/1fI7C13G-UNubbeyqzopRXs2d2cwGM0F5?usp=sharing) 
 ## Directory Structure
 
 
@@ -23,7 +24,7 @@ mmDoppler
 └── models
     └── macro_classifier.py
     └── micro_classifier.py
-└── dataset
+└── datasets
     └── macro_df_subset.pkl
     └── micro_df_subset.pkl
     └── macro_df.pkl
