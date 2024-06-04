@@ -1,7 +1,7 @@
 # <i>mmDoppler</i> 
 
 <p>
-<img align="center"  src="pictures/hardwaresetup.jpg" width="30%"/>
+<img align="center"  src="pictures/hardwaresetup.jpg" width="50%"/>
 </p>
 
 <hr></hr>
