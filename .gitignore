@@ -1,0 +1,8 @@
+**/*.png
+**/*.pdf
+**/__pycache__/
+**/*.ipynb
+**/*.npz
+**/*.h5
+**/logs
+datasets/
