@@ -49,6 +49,15 @@ In **suppllementary_plots** directory we have provided the source code for the p
 
 <hr>
 
+## Dataset Importance
+
+| Datasets  | Modality                                                 | Activity Type              | \# Classes | Granularity     | \# Frames | Effective Duration (s) | Multi-Subjects |
+| --------- | -------------------------------------------------------- | -------------------------- | ---------- | --------------- | --------- | ---------------------- | -------------- |
+| mRI       | mmWave pointcloud, RGB, Depth Camera and IMU signals     | Pose estimation            | 12         | Macro           | 160k      | 5333                   | No             |
+| mm-FI     | RGB, Depth Camera, LiDAR and mmWave pointcloud, WiFi CSI | Daily activities           | 27         | Macro           | 320k      | 10666                  | No             |
+| MiliPoint | mmWave pointcloud                                        | Daily activities           | 49         | Macro           | 545k      | 18166                  | No             |
+| RadHAR    | mmWave pointcloud                                        | Exercise                   | 5          | Macro           | 167k      | 5566                   | No             |
+| <b><i>mmDoppler</i></b> | <b>mmWave pointcloud, Range-Doppler heatmaps</b>                | <b>Daily activities, Exercise</b> | <b>19</b>         | <b>Macro and Micro</b> | <b>75k</b>       | <b>23100</b>                  | <b>Yes</b>            |
 
 ## Reference
 To refer <i>mmDoppler</i> dataset, please cite the following work.
