@@ -10,6 +10,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, f1_score, classification_report
 import seaborn as sns
+from baseline.RadHAR.Classifiers.TD_CNN_LSTM import full_3D_model
+from baseline.RadHAR.DataPreprocessing.voxels import voxalize
 plt.rcParams.update({'font.size': 18})
 plt.rcParams["figure.figsize"] = (13, 10)
 plt.rcParams["font.weight"] = "bold"
@@ -29,7 +31,7 @@ def StackFrames(doppz, labels, frame_stack=10):
 
 
 class Dataset:
-    def __init__(self, loc="../datasets/macro_df_subset.pkl", frame_stack=1):
+    def __init__(self, loc="macro_df_final.pkl", frame_stack=1):
         print(f"loading dataset from {loc}")
         df = pd.read_pickle(loc)
         df = df[df.Activity != '  '].reset_index()
@@ -81,13 +83,15 @@ def get_model():
 
 if __name__ == "__main__":
     X_train, X_test, y_train, y_test = get_dataset()
+    X_train = np.transpose(X_train,(0,3,1,2)) 
+    X_train = np.expand_dims(X_train,-1)
+    X_test = np.transpose(X_test,(0,3,1,2)) 
+    X_test = np.expand_dims(X_test,-1)
+    model = full_3D_model(X_train,y_train)
 
-    model = get_model()
-    print(model.summary())
     model.compile(loss="categorical_crossentropy", optimizer='adam',metrics="accuracy")
-
     folder=datetime.datetime.now().strftime("%Y_%m_%d-%I:%M:%S_%p")
-    best_save=tf.keras.callbacks.ModelCheckpoint(filepath='macro_weights.h5',save_weights_only=True,
+    best_save=tf.keras.callbacks.ModelCheckpoint(filepath='radhar_weights.h5',save_weights_only=True,
                                                     monitor='val_accuracy',mode='max',save_best_only=True)
     tbd=tf.keras.callbacks.TensorBoard(log_dir=f'logs/{folder}')
 
@@ -112,7 +116,7 @@ if __name__ == "__main__":
     plt.xticks(rotation=35)
     plt.yticks(rotation=35)
     plt.tight_layout()
-    plt.savefig('macro_classification.pdf')
+    plt.savefig('radhar_classification.pdf')
     plt.show()
     print(classification_report(np.argmax(y_test, axis=1), np.argmax(pred, axis=1)))
         
