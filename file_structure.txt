@@ -6,7 +6,6 @@
 │   │   ├── ./datasets/processed_datasets/micro_df.pkl
 │   │   └── ./datasets/processed_datasets/micro_df_subset.pkl
 │   └── ./datasets/README.md
-├── ./heatmaps
 ├── ./LICENSE
 ├── ./mmwave_demo_visualizer
 │   ├── ./mmwave_demo_visualizer/process_data.py
@@ -26,4 +25,4 @@
     ├── ./supplementary_plots/pointcloud.py
     └── ./supplementary_plots/resuts.py
 
-7 directories, 19 files
+6 directories, 19 files

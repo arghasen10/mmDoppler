@@ -36,25 +36,34 @@ pip install -r requirements.txt
 
 
 ```
-mmDoppler
-└── models
-    └── macro_classifier.py
-    └── micro_classifier.py
-    └── radhar_macro.py
-    └── radhar_micro.py
-└── datasets
-    └── README.md
-    └── processed_datasets
-        └── macro_df_subset.pkl
-        └── micro_df_subset.pkl
-        └── macro_df.pkl
-        └── micro_df.pkl
-    └── raw_datasets
-        └── multiuser
-        └── singleuser
-└── mmwave_demo_visualizer
-    └── README.md
-    └── process_data.py
+.
+├── ./datasets
+│   ├── ./datasets/processed_datasets
+│   │   ├── ./datasets/processed_datasets/macro_df.pkl
+│   │   ├── ./datasets/processed_datasets/macro_df_subset.pkl
+│   │   ├── ./datasets/processed_datasets/micro_df.pkl
+│   │   └── ./datasets/processed_datasets/micro_df_subset.pkl
+│   └── ./datasets/README.md
+├── ./LICENSE
+├── ./mmwave_demo_visualizer
+│   ├── ./mmwave_demo_visualizer/process_data.py
+│   └── ./mmwave_demo_visualizer/README.md
+├── ./models
+│   ├── ./models/macro_classifier.py
+│   ├── ./models/micro_classifier.py
+│   ├── ./models/radhar_macro.py
+│   └── ./models/radhar_micro.py
+├── ./pictures
+│   └── ./pictures/hardwaresetup.jpg
+├── ./README.md
+└── ./supplementary_plots
+    ├── ./supplementary_plots/dataset_pie.py
+    ├── ./supplementary_plots/plot_macro_tsne.py
+    ├── ./supplementary_plots/plot_micro_tsne.py
+    ├── ./supplementary_plots/pointcloud.py
+    └── ./supplementary_plots/resuts.py
+
+6 directories, 19 files
 ```
 
 ## Description 
