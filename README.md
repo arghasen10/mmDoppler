@@ -8,17 +8,29 @@
 
 Human activity recognition (HAR) is essential in healthcare, elder care, security, and human-computer interaction, depending on precise sensor data to identify activities. Millimeter wave (mmWave) radar is promising for HAR due to its ability to penetrate non-metallic materials and provide high-resolution sensing. Traditional HAR methods using pointcloud data from sensors like LiDAR or mmWave effectively capture macro-scale activities but struggle with micro-scale activities. This paper introduces <i>mmDoppler</i> , a novel dataset using Commercial off-the-shelf (COTS) mmWave radar, capturing both macro and micro-scale human movements. The dataset includes seven subjects performing 19 distinct activities and employs adaptive doppler resolution to enhance activity recognition. By adjusting the radar's doppler resolution based on the activity type, our system captures subtle movements more precisely. <i>mmDoppler</i>  includes range-doppler heatmaps, offering detailed motion dynamics, with data collected in a controlled environment with single as well as multiple subjects performing activities simultaneously. This dataset bridges the gap in HAR systems, providing a valuable resource for improving the robustness and accuracy of activity recognition using mmWave radar.
 
+| **Feature**     | **Description**                                                                                                                                            |
+| :-------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| datetime        | The date and time when the data was recorded. This helps in time-series analysis and <br>  synchronization with other data sources.                        |
+| rangeIdx        | Index corresponding to the range bin of the detected object. It indicates the distance of the <br>  object from the radar.                                 |
+| dopplerIdx      | Index corresponding to the Doppler bin, which represents the relative velocity of the <br>  detected object.                                               |
+| numDetectedObj  | The number of objects detected in a single frame. This feature is useful for understanding <br>  the multi-user activity dynamics of the scene.            |
+| range           | The actual distance measurement of the detected object from the radar in meters.                                                                           |
+| peakVal         | The peak value of the detected signal, indicating the strength of the returned radar signal.                                                               |
+| x\_coord        | The x-coordinate of the detected object in the radar's coordinate system.                                                                                  |
+| y\_coord        | The y-coordinate of the detected object in the radar's coordinate system.                                                                                  |
+| doppz           | The Range-doppler Heatmap value indicating the radial velocity of the detected object, <br>  helping to distinguish between stationary and moving objects. |
+| Position        | The position of the subject with respect to the radar. It can have values like 2m, 3m and 5m.                                                              |
+| Orientation     | The orientation of the subject relative to the radar's bore-sight angle: left, right, front, and back.                                                     |
+| activity        | The specific activity being performed by the subject, such as walking, running, or typing, <br>  used for machine learning and classification tasks.       |
+| activity\_class | A broad categorical label of the type of activity: whether macro activity  or micro activity                                                               |
+
 ## Installation:
 
 To install use the following commands.
 ```bash
 git clone https://github.com/arghasen10/mmDoppler.git
 pip install -r requirements.txt
-mkdir datasets
-cd datasets
 ```
-
-Please download the dataset through [Google Drive](https://drive.google.com/drive/folders/1fI7C13G-UNubbeyqzopRXs2d2cwGM0F5?usp=sharing) and paste the data in datasets directory.
 
 ## Directory Structure
 
@@ -29,6 +41,7 @@ mmDoppler
     └── macro_classifier.py
     └── micro_classifier.py
 └── datasets
+    └── README.md
     └── processed_datasets
         └── macro_df_subset.pkl
         └── micro_df_subset.pkl
