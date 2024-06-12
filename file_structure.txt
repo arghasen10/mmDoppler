@@ -1,5 +1,6 @@
 .
 ├── ./datasets
+│   ├── ./datasets/process_data.py
 │   ├── ./datasets/processed_datasets
 │   │   ├── ./datasets/processed_datasets/macro_df.pkl
 │   │   ├── ./datasets/processed_datasets/macro_df_subset.pkl
@@ -7,9 +8,6 @@
 │   │   └── ./datasets/processed_datasets/micro_df_subset.pkl
 │   └── ./datasets/README.md
 ├── ./LICENSE
-├── ./mmwave_demo_visualizer
-│   ├── ./mmwave_demo_visualizer/process_data.py
-│   └── ./mmwave_demo_visualizer/README.md
 ├── ./models
 │   ├── ./models/macro_classifier.py
 │   ├── ./models/micro_classifier.py
@@ -25,4 +23,4 @@
     ├── ./supplementary_plots/pointcloud.py
     └── ./supplementary_plots/resuts.py
 
-6 directories, 19 files
+5 directories, 18 files

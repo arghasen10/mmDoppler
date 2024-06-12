@@ -28,21 +28,14 @@ Human activity recognition (HAR) is essential in healthcare, elder care, securit
 
 To install use the following commands.
 ```bash
-git clone https://github.com/arghasen10/mmDoppler.git
+git clone --recurse-submodules https://github.com/arghasen10/mmDoppler.git
 pip install -r requirements.txt
 ```
 ## Data Collection Setup
 
-To install mmWave Demo Visualizer from Texas Instruments first go to this [link](https://dev.ti.com/gallery/view/mmwave/mmWave_Demo_Visualizer/) and select SDK [2.1.0](https://dev.ti.com/gallery/view/mmwave/mmWave_Demo_Visualizer/ver/2.1.0/).
+To install mmWave Demo Visualizer from Texas Instruments, first go to this [link](https://dev.ti.com/gallery/view/mmwave/mmWave_Demo_Visualizer/) and select SDK [2.1.0](https://dev.ti.com/gallery/view/mmwave/mmWave_Demo_Visualizer/ver/2.1.0/). Now go to Help and select Download or Clone Visualizer. Finally you need to download and install the entire repository in your machine.
 
-Now go to Help and select Download or Clone Visualizer. FInally you need to download and install the entire repository in your machine.
-
-Now clone this repository with the following command.
-```bash
-git clone https://github.com/arghasen10/mmWave-Demo-Visualizer.git
-
-```
-Once you clone the repository copy all the content and paste it in the installaed mmWave-demo-visualizer directory i.e. **C:\Users\UserName\guicomposer\runtime\gcruntime.v11\mmWave_Demo_Visualizer**
+Now copy all the content of the provided submodule `mmWave-Demo-Visualizer` and paste it in the installaed mmWave-demo-visualizer directory i.e. **C:\Users\UserName\guicomposer\runtime\gcruntime.v11\mmWave_Demo_Visualizer**
 
 Once you are done with the installation run 
 ```bash
@@ -61,6 +54,7 @@ To process the collected raw datsets in `.txt` format, first keep all the files 
 ```
 .
 ├── ./datasets
+│   ├── ./datasets/process_data.py
 │   ├── ./datasets/processed_datasets
 │   │   ├── ./datasets/processed_datasets/macro_df.pkl
 │   │   ├── ./datasets/processed_datasets/macro_df_subset.pkl
@@ -68,9 +62,6 @@ To process the collected raw datsets in `.txt` format, first keep all the files 
 │   │   └── ./datasets/processed_datasets/micro_df_subset.pkl
 │   └── ./datasets/README.md
 ├── ./LICENSE
-├── ./mmwave_demo_visualizer
-│   ├── ./mmwave_demo_visualizer/process_data.py
-│   └── ./mmwave_demo_visualizer/README.md
 ├── ./models
 │   ├── ./models/macro_classifier.py
 │   ├── ./models/micro_classifier.py
@@ -86,7 +77,7 @@ To process the collected raw datsets in `.txt` format, first keep all the files 
     ├── ./supplementary_plots/pointcloud.py
     └── ./supplementary_plots/resuts.py
 
-6 directories, 19 files
+5 directories, 18 files
 ```
 
 ## Description 
