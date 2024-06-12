@@ -22,4 +22,4 @@ Finally using this tool you can save mmWave data in your local machine. Data wil
 
 ## Process Collected datasets
 
-To process the collected raw datsets in `.txt` format, first keep all the files inside `datasets/raw_datasets` directory. Also keep the provided script `process_data.py` in the same directory `datasets/raw_datasets`. It will process the dataset and will store it in `.pkl` format as pandas dataframe.
+To process the collected raw datsets in `.txt` format, first keep all the files inside `datasets/raw_datasets` directory. Also keep the provided script `process_data.py` in the same directory `datasets/raw_datasets`. It will process the dataset and will store it in `.pkl` format as pandas dataframe. Note, you need to change the usernames as provided in the `process_data.py` as per your requirements.
