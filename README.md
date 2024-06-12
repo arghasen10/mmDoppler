@@ -1,7 +1,7 @@
 # <i>mmDoppler</i> 
 
-<p>
-<img align="center"  src="pictures/hardwaresetup.jpg" width="50%"/>
+<p align="center">
+<img src="pictures/hardwaresetup.jpg" width="50%"/>
 </p>
 
 <hr></hr>
@@ -29,10 +29,14 @@ mmDoppler
     └── macro_classifier.py
     └── micro_classifier.py
 └── datasets
-    └── macro_df_subset.pkl
-    └── micro_df_subset.pkl
-    └── macro_df.pkl
-    └── micro_df.pkl
+    └── processed_datasets
+        └── macro_df_subset.pkl
+        └── micro_df_subset.pkl
+        └── macro_df.pkl
+        └── micro_df.pkl
+    └── raw_datasets
+        └── multiuser
+        └── singleuser
 └── mmwave_demo_visualizer
     └── README.md
 ```
