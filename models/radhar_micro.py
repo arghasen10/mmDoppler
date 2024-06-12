@@ -38,7 +38,7 @@ lbl_map = {'laptop-typing': 0,
 
 
 def get_points(): 
-    df = pd.read_pickle('../datasets/micro_df_subset.pkl')
+    df = pd.read_pickle('../datasets/processed_datasets/micro_df_subset.pkl')
     points_data = df[['x_coord', 'y_coord', 'Activity']].values
     x_points = []
     y_points = []
@@ -120,7 +120,8 @@ model.fit(
     validation_split=0.2,
     batch_size=32)
 
-#model.load_weights('macro_weights.h5')
+model.save_weights('radhar_micro.h5')
+model.load_weights('radhar_micro.h5')
 
 pred = model.predict([X_test])
 conf_matrix = confusion_matrix(np.argmax(y_test, axis=1), np.argmax(pred, axis=1))
@@ -135,7 +136,7 @@ sns.heatmap(df_cm, vmin=0, vmax=1, annot=True, cmap="Blues")
 plt.xticks(rotation=35)
 plt.yticks(rotation=35)
 plt.tight_layout()
-plt.savefig('radhar_classification_points.pdf')
+plt.savefig('radhar_classification_points_micro.pdf')
 plt.show()
 print(classification_report(np.argmax(y_test, axis=1), np.argmax(pred, axis=1)))
     

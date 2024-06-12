@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from baseline.RadHAR.DataPreprocessing.voxels import voxalize
 from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.callbacks import ModelCheckpoint
 from sklearn.model_selection import train_test_split
 from baseline.RadHAR.Classifiers.TD_CNN_LSTM import full_3D_model
 from sklearn.metrics import confusion_matrix, f1_score, classification_report
@@ -38,7 +39,7 @@ lbl_map = {'Clapping': 0,
 
 
 def get_points(): 
-    df = pd.read_pickle('../datasets/macro_df_subset.pkl')
+    df = pd.read_pickle('../datasets/processed_datasets/macro_df_subset.pkl')
     points_data = df[['x_coord', 'y_coord', 'Activity']].values
     x_points = []
     y_points = []
@@ -110,17 +111,25 @@ X_train = np.expand_dims(X_train,-1)
 X_test = np.expand_dims(X_test,-1)
 model = full_3D_model(X_train,y_train)
 
-model.compile(loss="categorical_crossentropy", optimizer='adam',metrics="accuracy")
+model.compile(loss="categorical_crossentropy", optimizer='adam',metrics=["accuracy"])
+model(X_train[:32])
+#model_checkpoint_callback = ModelCheckpoint(
+#    filepath='radhar_macro.h5',
+#    monitor='val_accuracy',
+#    mode='max',
+#    save_best_only=True)
 
 
-model.fit(
-    X_train,
-    y_train,
-    epochs=100,
-    validation_split=0.2,
-    batch_size=32)
-
-#model.load_weights('macro_weights.h5')
+#model.fit(
+#    X_train,
+#    y_train,
+#    epochs=100,
+#    validation_split=0.2,
+#    batch_size=32)
+#    callbacks=[model_checkpoint_callback]
+#    )
+#model.save_weights('radhar_macro.h5')
+model.load_weights('radhar_macro.h5')
 
 pred = model.predict([X_test])
 conf_matrix = confusion_matrix(np.argmax(y_test, axis=1), np.argmax(pred, axis=1))
@@ -131,6 +140,7 @@ labels = ['clapping', 'jumping', 'lunges', 'running', 'squats', 'walking', 'wavi
 # labels = ['laptop\ntyping', 'sitting', 'phone\ntyping', 'phone\ntalking', 'playing\nguitar', 'eating\nfood',
 #             'combing\nhair', 'brushing', 'drinking\nwater']
 df_cm = pd.DataFrame(total, index=[i for i in labels], columns=[i for i in labels])
+print(df_cm)
 sns.heatmap(df_cm, vmin=0, vmax=1, annot=True, cmap="Blues")
 plt.xticks(rotation=35)
 plt.yticks(rotation=35)

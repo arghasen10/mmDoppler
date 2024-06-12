@@ -46,7 +46,7 @@ class Dataset:
 
 
 def get_dataset():
-    data = Dataset(loc='micro_df_final.pkl',
+    data = Dataset(loc='../datasets/processed_datasets/micro_df_subset.pkl',
                    frame_stack=2)
 
     lbl_map = {'laptop-typing': 0,
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     model.fit(
         X_train,
         y_train,
-        epochs=100,
+        epochs=500,
         validation_split=0.2,
         batch_size=32,
         callbacks=[best_save,tbd])

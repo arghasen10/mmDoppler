@@ -29,7 +29,7 @@ def StackFrames(doppz, labels, frame_stack=10):
 
 
 class Dataset:
-    def __init__(self, loc="../datasets/macro_df_subset.pkl", frame_stack=1):
+    def __init__(self, loc="../datasets/processed_datasets/macro_df_subset.pkl", frame_stack=1):
         print(f"loading dataset from {loc}")
         df = pd.read_pickle(loc)
         df = df[df.Activity != '  '].reset_index()
@@ -44,8 +44,8 @@ class Dataset:
 
 
 def get_dataset():
-    data = Dataset(loc='../datasets/macro_df_subset.pkl',
-                   frame_stack=10)
+    data = Dataset(loc='../datasets/processed_datasets/macro_df_subset.pkl',
+                   frame_stack=1)
 
     lbl_map = {'Clapping': 0,
                'jumping': 1,
