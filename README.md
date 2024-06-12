@@ -39,6 +39,7 @@ mmDoppler
         └── singleuser
 └── mmwave_demo_visualizer
     └── README.md
+    └── process_data.py
 ```
 
 ## Description 
@@ -68,11 +69,7 @@ To refer <i>mmDoppler</i> dataset, please cite the following work.
 
 BibTex Reference:
 ```
-@article{sen2024mmdoppler,
-  title={Human Activity Dataset Using Adaptive Doppler Resolution with mmWave Radar},
-  author={Sen, Argha and Das, Anirban and Pradhan, Swadhin and Chakraborty, Sandip},
-  year={2024}
-}
+Coming Soon ....
 ```
 For questions and general feedback, contact Argha Sen (arghasen10@gmail.com).
 
