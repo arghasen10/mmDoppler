@@ -5,6 +5,5 @@
 **/*.npz
 **/*.h5
 **/logs
-baseline
 **/*.pkl
 **/raw_datasets

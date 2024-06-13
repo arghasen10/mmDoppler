@@ -1,3 +1,7 @@
 [submodule "mmWave-Demo-Visualizer"]
 	path = mmWave-Demo-Visualizer
 	url = https://github.com/arghasen10/mmWave-Demo-Visualizer.git
+
+[submodule "models/baseline/RadHAR"]
+	path = models/baseline/RadHAR
+	url = https://github.com/arghasen10/RadHAR.git
