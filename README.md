@@ -10,18 +10,18 @@ Human activity recognition (HAR) is essential in healthcare, elder care, securit
 
 | **Feature**     | **Description**                                                                                                                                            |
 | :-------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| datetime        | The date and time when the data was recorded. This helps in time-series analysis and <br>  synchronization with other data sources.                        |
-| rangeIdx        | Index corresponding to the range bin of the detected object. It indicates the distance of the <br>  object from the radar.                                 |
-| dopplerIdx      | Index corresponding to the Doppler bin, which represents the relative velocity of the <br>  detected object.                                               |
-| numDetectedObj  | The number of objects detected in a single frame. This feature is useful for understanding <br>  the multi-user activity dynamics of the scene.            |
+| datetime        | The date and time when the data was recorded. This helps in time-series analysis and synchronization with other data sources.                        |
+| rangeIdx        | Index corresponding to the range bin of the detected object. It indicates the distance of the  object from the radar.                                 |
+| dopplerIdx      | Index corresponding to the Doppler bin, which represents the relative velocity of the detected object.                                               |
+| numDetectedObj  | The number of objects detected in a single frame. This feature is useful for understanding  the multi-user activity dynamics of the scene.            |
 | range           | The actual distance measurement of the detected object from the radar in meters.                                                                           |
 | peakVal         | The peak value of the detected signal, indicating the strength of the returned radar signal.                                                               |
 | x\_coord        | The x-coordinate of the detected object in the radar's coordinate system.                                                                                  |
 | y\_coord        | The y-coordinate of the detected object in the radar's coordinate system.                                                                                  |
-| doppz           | The Range-doppler Heatmap value indicating the radial velocity of the detected object, <br>  helping to distinguish between stationary and moving objects. |
+| doppz           | The Range-doppler Heatmap value indicating the radial velocity of the detected object, helping to distinguish between stationary and moving objects. |
 | Position        | The position of the subject with respect to the radar. It can have values like 2m, 3m and 5m.                                                              |
 | Orientation     | The orientation of the subject relative to the radar's bore-sight angle: left, right, front, and back.                                                     |
-| activity        | The specific activity being performed by the subject, such as walking, running, or typing, <br>  used for machine learning and classification tasks.       |
+| activity        | The specific activity being performed by the subject, such as walking, running, or typing, used for machine learning and classification tasks.       |
 | activity\_class | A broad categorical label of the type of activity: whether macro activity  or micro activity                                                               |
 
 ## Installation:
