@@ -16,18 +16,6 @@ from collections import Counter
 import pickle
 from imblearn.over_sampling import SMOTE
 
-
-def map_user(u):
-    u_map = \
-    {'anirban':1, 
-     'ankita':2, 
-     'aritra':3, 
-     'avijit':4, 
-     'argha':5, 
-     'salma':6, 
-     'sugandh':7,
-     }
-    return 'User-'+str(u_map[u])
     
 def find_annot(activity):
     annots = {
@@ -99,7 +87,7 @@ def map_macro_micro(a):
 
 
 def process_mmwave(f):
-    u = map_user(f.split('/')[1].split('_')[0])
+    u = f.split('/')[1].split('_')[0]
     data = [json.loads(val) for val in open(f, "r")]
     annot = find_annot(data[0]['activity'])
     if data[0]['datenow'].split('/')[1] == '0':
