@@ -28,7 +28,7 @@ Human activity recognition (HAR) is essential in healthcare, elder care, securit
 
 To install use the following commands.
 ```bash
-git clone --recurse-submodules https://github.com/arghasen10/mmDoppler.git
+git clone --recurse-submodules https://anonymous.4open.science/r/mmDoppler/README.md
 pip install -r requirements.txt
 ```
 ## Data Collection Setup
@@ -102,12 +102,12 @@ In **suppllementary_plots** directory we have provided the source code for the p
 | RadHAR    | mmWave pointcloud                                        | Exercise                   | 5          | Macro           | 167k      | 5566                   | No             |
 | <b><i>mmDoppler</i></b> | <b>mmWave pointcloud, Range-Doppler heatmaps</b>                | <b>Daily activities, Exercise</b> | <b>19</b>         | <b>Macro and Micro</b> | <b>75k</b>       | <b>23100</b>                  | <b>Yes</b>            |
 
-## Reference
+<!-- ## Reference
 To refer <i>mmDoppler</i> dataset, please cite the following work.
 
 BibTex Reference:
 ```
 Coming Soon ....
 ```
-For questions and general feedback, contact Argha Sen (arghasen10@gmail.com).
+For questions and general feedback, contact Argha Sen (arghasen10@gmail.com). -->
 

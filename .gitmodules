@@ -1,7 +1,7 @@
 [submodule "mmWave-Demo-Visualizer"]
 	path = mmWave-Demo-Visualizer
-	url = https://github.com/arghasen10/mmWave-Demo-Visualizer.git
+	url = https://anonymous.4open.science/r/mmWaveDemoVisualizer360/README.md
 
 [submodule "models/baseline/RadHAR"]
 	path = models/baseline/RadHAR
-	url = https://github.com/arghasen10/RadHAR.git
+	url = https://anonymous.4open.science/r/RadHAR-8159/README.md
